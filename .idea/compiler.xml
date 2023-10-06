@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/BankingApp/BankingAppCommon/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="BankingAppFeignApi" />
+        <module name="StaffApiService" />
+        <module name="BankingAppCommon" />
+        <module name="CustomerApiService" />
+        <module name="CommonService" />
+        <module name="FeignApi" />
+        <module name="ApproverApiService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ApproverApp" target="1.5" />
+      <module name="BankingApp (1) (com.example)" target="17" />
+      <module name="customer" target="17" />
+      <module name="CustomerApp" target="11" />
+      <module name="StaffApp" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApproverApiService" options="-parameters" />
+      <module name="ApproverApp" options="" />
+      <module name="BankAppApiService" options="" />
+      <module name="BankingApp" options="" />
+      <module name="BankingApp (1) (com.example)" options="-parameters" />
+      <module name="BankingAppCommon" options="-parameters" />
+      <module name="BankingAppFeignApi" options="-parameters" />
+      <module name="CommonService" options="-parameters" />
+      <module name="CustomerApiService" options="-parameters" />
+      <module name="CustomerApp" options="-parameters" />
+      <module name="FeignApi" options="-parameters" />
+      <module name="StaffApiService" options="-parameters" />
+      <module name="StaffApp" options="-parameters" />
+      <module name="customer" options="-parameters" />
+    </option>
+  </component>
+</project>

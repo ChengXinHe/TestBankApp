@@ -1,0 +1,4 @@
+com\learning\BankingAppFeignApiApplication.class
+com\learning\apis\staff\StaffClient.class
+com\learning\apis\approver\ApproverClient.class
+com\learning\apis\customer\CustomerClient.class
