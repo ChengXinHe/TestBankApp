@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 
-@FeignClient(value = "staffstaff-api-service")
+@FeignClient(value = "approver-api-service")
 public interface ApproverClient {
 
     @GetMapping("/viewall")
