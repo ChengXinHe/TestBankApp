@@ -1,7 +1,7 @@
-package com.learning.BankingApp.Repository;
+package com.learning.Repository;
 
 
-import com.learning.Entity.Admin.ApproverEntity;
+import com.learning.Utils.jwt.Admin.ApproverEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

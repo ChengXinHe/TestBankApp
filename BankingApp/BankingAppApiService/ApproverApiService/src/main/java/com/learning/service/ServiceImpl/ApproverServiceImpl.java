@@ -1,9 +1,9 @@
 package com.learning.service.ServiceImpl;
 
-import com.learning.BankingApp.Repository.ApproverRepository;
+import com.learning.Repository.ApproverRepository;
+import com.learning.Utils.jwt.Admin.ApproverEntity;
 import com.learning.common.DTO.ResponseResult;
 import com.learning.common.constants.AppHttpCodeEnum;
-import com.learning.Entity.Admin.ApproverEntity;
 import com.learning.Entity.DTO.StaffDTO;
 import com.learning.service.ApproverService;
 import org.springframework.beans.factory.annotation.Autowired;

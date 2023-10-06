@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <artifactId>BankingAppCommon</artifactId>
+            <artifactId>CommonService</artifactId>
             <groupId>com.learning</groupId>
             <version>${project.version}</version>
         </dependency>

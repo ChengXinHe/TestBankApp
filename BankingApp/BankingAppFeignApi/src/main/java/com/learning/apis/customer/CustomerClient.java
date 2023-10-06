@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 
 
-@FeignClient(value = "leadnews-article")
+@FeignClient(value = "customer-api-service")
 public interface CustomerClient {
 
 
