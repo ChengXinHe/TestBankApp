@@ -33,9 +33,8 @@ public class ApproverController {
 
     @PostMapping("/staff")
     public ResponseResult createStaff(@RequestBody StaffDTO dto) {
-        staffClient.createStaff(dto);
         //if success
-        return ResponseResult.okResult("");
+        return ResponseResult.okResult(staffClient.createStaff(dto).getData());
     }
 
 
