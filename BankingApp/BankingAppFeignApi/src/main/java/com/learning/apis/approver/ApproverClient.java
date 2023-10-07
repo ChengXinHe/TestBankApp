@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(value = "approver-api-service")
 public interface ApproverClient {
 
-    @GetMapping("/viewall")
-    public ResponseResult viewStaff(Integer adminId);
+
 
 }

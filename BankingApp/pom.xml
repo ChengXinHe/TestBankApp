@@ -29,7 +29,9 @@
     </dependencies>
 
     <dependencyManagement>
+
         <dependencies>
+
             <dependency>
                 <artifactId>CommonService</artifactId>
                 <groupId>com.learning</groupId>
