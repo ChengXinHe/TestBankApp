@@ -5,7 +5,6 @@ import com.learning.Repository.StaffRepository;
 import com.learning.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +16,8 @@ public class StaffServiceImpl implements StaffService {
     StaffRepository staffRepository;
 
     @Override
-    public List<StaffEntity>  viewStaff(Integer approverid) {
-        List<StaffEntity> staffList = staffRepository.findByApprover_Approverid(approverid);
+    public List<StaffEntity>  viewStaff(Long approverid) {
+        List<StaffEntity> staffList = staffRepository.findByApprover_Id(approverid);
         return staffList;
     }
 
@@ -28,7 +27,7 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
-    public void changeStatus(Integer staffId, boolean status) {
+    public void changeStatus(Long staffId, boolean status) {
         Optional<StaffEntity> optionalStaff = staffRepository.findById(staffId);
         if (optionalStaff.isPresent()) {
             StaffEntity staff = optionalStaff.get();

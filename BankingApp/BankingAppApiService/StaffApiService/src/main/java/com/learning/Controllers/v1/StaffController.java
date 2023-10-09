@@ -1,6 +1,7 @@
 package com.learning.Controllers.v1;
 
 import com.learning.Entity.DTO.ChangeStatusDTO;
+import com.learning.Entity.DTO.SignupRequest;
 import com.learning.Entity.model.ApproverEntity;
 import com.learning.Entity.model.StaffEntity;
 import com.learning.apis.approver.ApproverClient;
@@ -8,6 +9,7 @@ import com.learning.common.DTO.ResponseResult;
 import com.learning.Entity.DTO.StaffDTO;
 import com.learning.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,27 +23,21 @@ public class StaffController {
     @Autowired
     private StaffService staffService;
 
+    @Autowired
+    private AuthController authController;
+
 
     @PostMapping("/createstaff")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseResult createStaff(@RequestBody StaffDTO dto) {
-        System.out.println("create staff");
-        StaffEntity staff = new StaffEntity();
-        staff.setStaffage(dto.getStaffage());
-        staff.setStaffname(dto.getStaffname());
-        ApproverEntity approver = new ApproverEntity();
-        approver.setApproverid(dto.getApproverid());
-        staff.setStatus(!dto.getStatus());
-
-
-        staff.setApprover(approver);
-        //if success
-        staffService.createStaff(staff);
+        authController.registerUser(dto);
         return ResponseResult.okResult("");
     }
 
 
     @GetMapping("/viewall/{approverId}")
-    public ResponseResult viewStaff(@PathVariable Integer approverId) {
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseResult viewStaff(@PathVariable Long approverId) {
         List<StaffEntity> result = staffService.viewStaff(approverId);
         for (StaffEntity s : result) {
             System.out.println(s.toString());
@@ -50,6 +46,7 @@ public class StaffController {
     }
 
     @PutMapping("/createstaff")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseResult changeStatus(@RequestBody ChangeStatusDTO dto) {
          try {
              System.out.println(dto.getStaffid());

@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ApproverService {
     public ResponseResult createStaff(StaffDTO staffDTO);
-    public Optional<ApproverEntity> viewStaff(Integer approverId);
-    public Optional<ApproverEntity> findApprover(Integer approverId);
+    public Optional<ApproverEntity> viewStaff(Long approverId);
+    public Optional<ApproverEntity> findApprover(Long approverId);
     public void enableAndDisable();
 }

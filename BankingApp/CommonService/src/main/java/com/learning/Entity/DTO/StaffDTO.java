@@ -1,28 +1,43 @@
 package com.learning.Entity.DTO;
 
 public class StaffDTO {
-    Integer approverid;
-    String staffname;
-    Integer staffage;
-    Boolean status;
+    Long approverid;
+    String staffusername;
 
-    public Integer getApproverid() {
+    String stafffullname;
+
+    String password;
+
+
+    public Long getApproverid() {
         return approverid;
     }
 
-
-    public String getStaffname() {
-        return staffname;
+    public void setApproverid(Long approverid) {
+        this.approverid = approverid;
     }
 
-
-    public Integer getStaffage() {
-        return staffage;
+    public void setStaffusername(String staffusername) {
+        this.staffusername = staffusername;
     }
 
-
-    public Boolean getStatus() {
-        return status;
+    public void setStafffullname(String stafffullname) {
+        this.stafffullname = stafffullname;
     }
 
+    public String getStaffusername() {
+        return staffusername;
+    }
+
+    public String getStafffullname() {
+        return stafffullname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

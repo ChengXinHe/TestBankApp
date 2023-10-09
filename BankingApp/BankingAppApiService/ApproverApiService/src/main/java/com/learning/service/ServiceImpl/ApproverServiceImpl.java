@@ -18,7 +18,7 @@ public class ApproverServiceImpl implements ApproverService {
     ApproverRepository approverRepository;
 
     @Override
-    public Optional<ApproverEntity> findApprover(Integer approverId) {
+    public Optional<ApproverEntity> findApprover(Long approverId) {
         Optional<ApproverEntity> approver = approverRepository.findById(approverId);
         return approver;
     }
@@ -33,7 +33,7 @@ public class ApproverServiceImpl implements ApproverService {
     }
 
     @Override
-    public Optional<ApproverEntity> viewStaff(Integer  approverId) {
+    public Optional<ApproverEntity> viewStaff(Long  approverId) {
         Optional<ApproverEntity> approvers = approverRepository.findById(approverId);
 
         return approvers;

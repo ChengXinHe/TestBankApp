@@ -1,14 +1,14 @@
 package com.learning.Entity.DTO;
 
 public class ChangeStatusDTO {
-    Integer staffid;
-    boolean status;
+    private Long staffid;
+    private boolean status;
 
-    public Integer getStaffid() {
+    public Long getStaffid() {
         return staffid;
     }
 
-    public void setStaffid(Integer staffid) {
+    public void setStaffid(Long staffid) {
         this.staffid = staffid;
     }
 

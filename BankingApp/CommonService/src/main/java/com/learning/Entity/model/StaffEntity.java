@@ -3,17 +3,12 @@ package com.learning.Entity.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "staff")
-public class StaffEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer staffid;
-
-    private String staffname;
-
-    private Integer staffage;
+public class StaffEntity extends UserEntity{
 
     private Boolean status;
 
@@ -21,6 +16,13 @@ public class StaffEntity {
     @JoinColumn(name = "approverid")
     @JsonIgnore
     private ApproverEntity approver;
+
+    public StaffEntity() {
+    }
+
+    public StaffEntity(String staffusername,String stafffullname, String staffpassword) {
+        super(staffusername,stafffullname,staffpassword);
+    }
 
     public ApproverEntity getApprover() {
         return approver;
@@ -30,21 +32,6 @@ public class StaffEntity {
         this.approver = approver;
     }
 
-    public Integer getStaffid() {
-        return staffid;
-    }
-
-    public void setStaffid(Integer staffid) {
-        this.staffid = staffid;
-    }
-
-    public void setStaffname(String staffname) {
-        this.staffname = staffname;
-    }
-
-    public void setStaffage(Integer staffage) {
-        this.staffage = staffage;
-    }
 
     public Boolean getStatus() {
         return status;
@@ -54,21 +41,15 @@ public class StaffEntity {
         this.status = status;
     }
 
-    public String getStaffname() {
-        return staffname;
-    }
-
-    public Integer getStaffage() {
-        return staffage;
-    }
 
 
     @Override
     public String toString() {
         return "StaffEntity{" +
-                "staffid=" + staffid +
-                ", staffname='" + staffname + '\'' +
-                ", staffage=" + staffage +
+                "staffid=" + super.getId() +
+                ", staffname='" + super.getFullname() + '\'' +
+                ", staffusername='" + super.getUsername() + '\'' +
+                ", staffpassword='" + super.getPassword() + '\'' +
                 ", status=" + status +
                 '}';
     }
