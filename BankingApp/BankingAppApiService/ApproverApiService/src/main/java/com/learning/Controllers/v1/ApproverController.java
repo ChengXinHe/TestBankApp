@@ -37,8 +37,17 @@ public class ApproverController {
     @PostMapping("/staff")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseResult createStaff(@RequestBody StaffDTO dto) {
+        ResponseResult result = staffClient.createStaff(dto);
+        System.out.println("create staff");
+        System.out.println(result.getData());
+
+        if (result.getCode().equals("200")) {
+            return ResponseResult.okResult(result.getData());
+        } else {
+            return ResponseResult.errorResult(result.getCode(),result.getErrorMessage());
+        }
         //if success
-        return ResponseResult.okResult(staffClient.createStaff(dto).getData());
+
     }
 
 

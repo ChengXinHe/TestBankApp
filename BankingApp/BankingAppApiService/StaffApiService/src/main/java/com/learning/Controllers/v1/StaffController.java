@@ -30,8 +30,13 @@ public class StaffController {
     @PostMapping("/createstaff")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseResult createStaff(@RequestBody StaffDTO dto) {
-        authController.registerUser(dto);
-        return ResponseResult.okResult("");
+        ResponseResult result = authController.registerUser(dto);
+        if (result.getCode().equals("200")) {
+            return ResponseResult.okResult(result.getData());
+        } else {
+            return ResponseResult.errorResult(result.getCode(),result.getErrorMessage());
+        }
+
     }
 
 
